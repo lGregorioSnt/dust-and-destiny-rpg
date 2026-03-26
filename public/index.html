@@ -960,6 +960,27 @@ function initSocket(){
   G.socket.on('trade-incoming',({fromId,fromName,item})=>{
     toast(`📦 ${fromName} oferece ${item.name} — Aceitar? (ainda não implementado)`);
   });
+  // Escuta quando um aliado ataca o monstro
+  G.socket.on('player-combat', (data) => {
+    // Só atualiza se você estiver na tela de combate e o monstro existir
+    if (G.screen === 'combat' && G.enemy) {
+      // Atualiza a vida do monstro no seu PC para bater com o dano que o aliado causou
+      G.enemy.hp = data.enemyHp;
+      
+      // Tenta achar o nome de quem atacou para jogar no log
+      const aliado = G.roomPlayers[data.playerId];
+      const nomeAliado = aliado ? aliado.name : 'Um aliado';
+      
+      log(`⚔️ ${nomeAliado} atingiu o inimigo!`, 'system');
+
+      // Se o monstro morrer pelo ataque do seu amigo, você vence a fase também
+      if (G.enemy.hp <= 0) {
+        endCombat(true);
+      } else {
+        render(); // Atualiza a tela com a nova barra de vida
+      }
+    }
+  });
 }
 
 function updateRoomPlayers(players){
