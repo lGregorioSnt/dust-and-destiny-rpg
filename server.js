@@ -55,6 +55,8 @@ function getRoomSummary(roomId) {
       hp: p.hp,
       maxHp: p.maxHp,
       alive: p.hp > 0,
+      isReady: p.isReady,
+      turnReady: p.turnReady
     }))
   };
 }
@@ -63,7 +65,6 @@ function getRoomSummary(roomId) {
 io.on('connection', (socket) => {
   console.log(`[+] Connected: ${socket.id}`);
 
-  // List available rooms
   socket.on('list-rooms', () => {
     const list = Object.values(rooms)
       .filter(r => Object.keys(r.players).length > 0)
@@ -77,13 +78,11 @@ io.on('connection', (socket) => {
     socket.emit('rooms-list', list);
   });
 
-  // Create or join room
   socket.on('join-room', ({ roomId, player }) => {
     const rid = roomId || uuidv4().slice(0, 6).toUpperCase();
 
     if (!rooms[rid]) createRoom(rid);
 
-    // Leave old room
     const oldRoom = playerRooms[socket.id];
     if (oldRoom && rooms[oldRoom]) {
       delete rooms[oldRoom].players[socket.id];
@@ -92,7 +91,6 @@ io.on('connection', (socket) => {
       broadcastRoom(oldRoom, 'room-update', getRoomSummary(oldRoom));
     }
 
-    // Join new room
     playerRooms[socket.id] = rid;
     rooms[rid].players[socket.id] = {
       ...player,
@@ -108,12 +106,10 @@ io.on('connection', (socket) => {
     });
     broadcastRoom(rid, 'room-update', getRoomSummary(rid));
 
-    // Send recent chat
     const recentChat = rooms[rid].chat.slice(-30);
     socket.emit('chat-history', recentChat);
   });
 
-  // Update player state (hp, level, region, etc)
   socket.on('update-player', (playerData) => {
     const rid = playerRooms[socket.id];
     if (!rid || !rooms[rid]) return;
@@ -125,14 +121,12 @@ io.on('connection', (socket) => {
     broadcastRoom(rid, 'room-update', getRoomSummary(rid));
   });
 
-  // Combat event (for spectating)
   socket.on('combat-event', (data) => {
     const rid = playerRooms[socket.id];
     if (!rid) return;
     socket.to(rid).emit('player-combat', { playerId: socket.id, ...data });
   });
 
-  // Super attack broadcast (triggers cutscene on all clients)
   socket.on('super-attack', (data) => {
     const rid = playerRooms[socket.id];
     if (!rid) return;
@@ -146,7 +140,6 @@ io.on('connection', (socket) => {
     });
   });
 
-  // Chat message
   socket.on('chat', ({ message }) => {
     const rid = playerRooms[socket.id];
     if (!rid || !rooms[rid]) return;
@@ -165,7 +158,6 @@ io.on('connection', (socket) => {
     broadcastRoom(rid, 'chat-message', msg);
   });
 
-  // Trade request
   socket.on('trade-offer', ({ targetId, item }) => {
     io.to(targetId).emit('trade-incoming', {
       fromId: socket.id,
@@ -183,7 +175,6 @@ io.on('connection', (socket) => {
     io.to(fromId).emit('trade-rejected');
   });
 
-  // Disconnect
   socket.on('disconnect', () => {
     console.log(`[-] Disconnected: ${socket.id}`);
     const rid = playerRooms[socket.id];
@@ -196,14 +187,13 @@ io.on('connection', (socket) => {
           if (rooms[rid] && Object.keys(rooms[rid].players).length === 0) {
             delete rooms[rid];
           }
-        }, 300000); // clean up empty rooms after 5 min
+        }, 300000);
       }
     }
     delete playerRooms[socket.id];
   });
 });
 
-// ── CLEANUP OLD ROOMS ──────────────────────────────────────
 setInterval(() => {
   const now = Date.now();
   Object.keys(rooms).forEach(rid => {

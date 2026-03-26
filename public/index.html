@@ -709,9 +709,9 @@ const CLASSES = {
     superDesc:'Descarrega todos os cilindros num instante — dano apocalíptico garantido',
     superColor:'#ef4444',
     abilities:[
-      {id:'attack',    name:'Tiro Rápido',       icon:'🔫',desc:'Disparo veloz básico',               mp:0, lv:1,type:'dmg',      pow:1.0},
+      {id:'attack',    name:'Tiro Rápido',       icon:'🔫',desc:'Disparo veloz básico',                mp:0, lv:1,type:'dmg',      pow:1.0},
       {id:'headshot',  name:'Tiro na Cabeça',    icon:'🎯',desc:'60% chance de crítico devastador',   mp:14,lv:1,type:'dmg_crit', pow:2.0},
-      {id:'quickdraw', name:'Saque Rápido',      icon:'⚡',desc:'2 disparos velozes (1.8× cada)',     mp:18,lv:2,type:'multi',    pow:1.8},
+      {id:'quickdraw', name:'Saque Rápido',      icon:'⚡',desc:'2 disparos velozes (1.8× cada)',      mp:18,lv:2,type:'multi',    pow:1.8},
       {id:'ricochet',  name:'Ricochete',         icon:'🪃',desc:'Dano pica inimigo 3× seguidas',      mp:22,lv:4,type:'triple',   pow:1.4},
       {id:'deadeye',   name:'Olho de Águia',     icon:'🦅',desc:'4× dano + ignora DEF',              mp:30,lv:6,type:'piercing', pow:4.0},
       {id:'super',     name:'DANÇA DA MORTE',    icon:'💀',desc:'Super — todos os cilindros (8×)',    mp:0, lv:1,type:'super',    pow:8.0},
@@ -726,11 +726,11 @@ const CLASSES = {
     superDesc:'Emerge das trevas num golpe que parte a alma e o corpo',
     superColor:'#f59e0b',
     abilities:[
-      {id:'attack',    name:'Faca Suja',         icon:'🗡️',desc:'Ataque básico traiçoeiro',           mp:0, lv:1,type:'dmg',      pow:1.0},
+      {id:'attack',    name:'Faca Suja',         icon:'🗡️',desc:'Ataque básico traiçoeiro',            mp:0, lv:1,type:'dmg',      pow:1.0},
       {id:'backstab',  name:'Apunhalar',         icon:'🎭',desc:'2.4× + 50% crit se inimigo debufado',mp:12,lv:1,type:'dmg_crit', pow:2.4},
-      {id:'poison',    name:'Veneno de Cobra',   icon:'🐍',desc:'Envenena por 4 turnos',              mp:16,lv:2,type:'poison',   pow:0.9},
-      {id:'bleed',     name:'Corte Profundo',    icon:'🩸',desc:'Causa sangramento por 3 turnos',     mp:18,lv:4,type:'bleed',    pow:0.7},
-      {id:'smokeout',  name:'Cortina de Fumaça', icon:'💨',desc:'Esquiva e contra-ataca (3×)',        mp:28,lv:6,type:'evade_counter',pow:3.0},
+      {id:'poison',    name:'Veneno de Cobra',   icon:'🐍',desc:'Envenena por 4 turnos',               mp:16,lv:2,type:'poison',   pow:0.9},
+      {id:'bleed',     name:'Corte Profundo',    icon:'🩸',desc:'Causa sangramento por 3 turnos',      mp:18,lv:4,type:'bleed',    pow:0.7},
+      {id:'smokeout',  name:'Cortina de Fumaça', icon:'💨',desc:'Esquiva e contra-ataca (3×)',         mp:28,lv:6,type:'evade_counter',pow:3.0},
       {id:'super',     name:'JULGAMENTO DAS SOMBRAS',icon:'🌑',desc:'Super — golpe das trevas (8.5×)',mp:0, lv:1,type:'super',    pow:8.5},
     ]
   },
@@ -760,7 +760,7 @@ const CLASSES = {
     superDesc:'Uma rajada de projéteis que cobre o céu e devasta qualquer alvo',
     superColor:'#34d399',
     abilities:[
-      {id:'attack',    name:'Flechada',          icon:'🏹',desc:'Disparo preciso básico',             mp:0, lv:1,type:'dmg',      pow:1.0},
+      {id:'attack',    name:'Flechada',          icon:'🏹',desc:'Disparo preciso básico',              mp:0, lv:1,type:'dmg',      pow:1.0},
       {id:'markshot',  name:'Disparo Marcado',   icon:'🎯',desc:'2.2× + marca o inimigo (vuln 20%)',  mp:13,lv:1,type:'dmg_mark', pow:2.2},
       {id:'track',     name:'Farejar',           icon:'🐾',desc:'1.5× dano + reduz DEF por 3 turnos',mp:16,lv:2,type:'dmg_debuff',pow:1.5},
       {id:'volley',    name:'Saraivada',         icon:'🌧️',desc:'Chuva de flechas (4 ataques 1.3×)', mp:24,lv:4,type:'volley',   pow:1.3},
@@ -778,7 +778,7 @@ const CLASSES = {
     superColor:'#a78bfa',
     abilities:[
       {id:'attack',    name:'Palavra da Lei',    icon:'✝️',desc:'Ataque sagrado básico',              mp:0, lv:1,type:'dmg',      pow:1.0},
-      {id:'smite',     name:'Flagelo Divino',    icon:'⚡',desc:'2.5× dano sagrado',                  mp:15,lv:1,type:'dmg',      pow:2.5},
+      {id:'smite',     name:'Flagelo Divino',    icon:'⚡',desc:'2.5× dano sagrado',                 mp:15,lv:1,type:'dmg',      pow:2.5},
       {id:'heal',      name:'Bênção Curativa',   icon:'💚',desc:'Restaura 55 HP',                    mp:20,lv:2,type:'heal',     pow:55},
       {id:'curse',     name:'Maldição',          icon:'☠️',desc:'Reduz ATK+DEF inimigo em 30%',      mp:22,lv:4,type:'full_debuff',pow:0},
       {id:'resurrection',name:'Ressurreição',   icon:'🕊️',desc:'Cura total do HP + remove debuffs', mp:50,lv:6,type:'fullheal',  pow:0},
@@ -872,8 +872,8 @@ const SHOP_ITEMS = [
   {id:'spot',  name:'Whisky Medicinal',  icon:'🥃',desc:'Restaura 55 HP',                  cost:55, type:'heal',   val:55},
   {id:'lpot',  name:'Soro do Curandeiro',icon:'⚗️',desc:'Restaura 130 HP',                 cost:120,type:'heal',   val:130},
   {id:'elix',  name:'Elixir de Peyote',  icon:'✨',desc:'Restaura HP e Mana totalmente',   cost:300,type:'full',   val:0},
-  {id:'meth',  name:'Tabaco Arcano',     icon:'🪣',desc:'Restaura 60 MP',                   cost:70, type:'mana',   val:60},
-  {id:'geth',  name:'Salva de Mana',     icon:'💠',desc:'Restaura toda a Mana',             cost:140,type:'fullmp', val:0},
+  {id:'meth',  name:'Tabaco Arcano',     icon:'🪣',desc:'Restaura 60 MP',                  cost:70, type:'mana',   val:60},
+  {id:'geth',  name:'Salva de Mana',     icon:'💠',desc:'Restaura toda a Mana',            cost:140,type:'fullmp', val:0},
   {id:'atkgm', name:'Pólvora Extra',     icon:'💥',desc:'+8 ATK permanente',               cost:175,type:'atk',    val:8},
   {id:'defgm', name:'Colete de Couro',   icon:'🦺',desc:'+8 DEF permanente',               cost:175,type:'def',    val:8},
   {id:'hpgm',  name:'Raiz Brava',        icon:'🌿',desc:'+30 HP Máximo permanente',        cost:155,type:'maxhp',  val:30},
@@ -902,6 +902,8 @@ let G={
   playerBurn:0,playerBleed:0,
   superCharge:0,// 0-100
   playerName:'Pistoleiro',
+  isReady: false,
+  turnReady: false,
   // Multiplayer
   socket:null,roomId:null,roomPlayers:{},
   mySocketId:null,
@@ -928,6 +930,26 @@ function initSocket(){
 
   G.socket.on('room-update',(room)=>{
     if(room) updateRoomPlayers(room.players);
+    
+    const players = Object.values(G.roomPlayers);
+
+    // 1. COMEÇAR O JOGO: Se todos na sala de espera escolheram classe
+    if (G.screen === 'waiting-room' && players.length > 0) {
+      if (players.every(p => p.isReady)) {
+        startCombat();
+      }
+    }
+
+    // 2. PASSAR O TURNO: Se todos no combate atacaram
+    if (G.screen === 'combat') {
+      const vivos = players.filter(p => p.alive);
+      if (vivos.length > 0 && vivos.every(p => p.turnReady)) {
+        G.turnReady = false; // Destrava o seu turno
+        emitPlayerUpdate();
+        doEnemyAttackAndContinue(); // O monstro ataca!
+      }
+    }
+    
     renderIfCombat();
   });
 
@@ -960,24 +982,21 @@ function initSocket(){
   G.socket.on('trade-incoming',({fromId,fromName,item})=>{
     toast(`📦 ${fromName} oferece ${item.name} — Aceitar? (ainda não implementado)`);
   });
-  // Escuta quando um aliado ataca o monstro
+
+  // Sincronizar o dano no inimigo na tela de todos
   G.socket.on('player-combat', (data) => {
-    // Só atualiza se você estiver na tela de combate e o monstro existir
     if (G.screen === 'combat' && G.enemy) {
-      // Atualiza a vida do monstro no seu PC para bater com o dano que o aliado causou
       G.enemy.hp = data.enemyHp;
       
-      // Tenta achar o nome de quem atacou para jogar no log
       const aliado = G.roomPlayers[data.playerId];
       const nomeAliado = aliado ? aliado.name : 'Um aliado';
       
       log(`⚔️ ${nomeAliado} atingiu o inimigo!`, 'system');
 
-      // Se o monstro morrer pelo ataque do seu amigo, você vence a fase também
       if (G.enemy.hp <= 0) {
         endCombat(true);
       } else {
-        render(); // Atualiza a tela com a nova barra de vida
+        render();
       }
     }
   });
@@ -992,8 +1011,9 @@ function updateRoomPlayers(players){
 function renderIfCombat(){
   if(G.screen==='combat') render();
   if(G.screen==='shop') render();
-  if(G.screen==='lobby') render(); // Essa é a linha mágica que faltava!
+  if(G.screen==='lobby') render();
 }
+
 function emitPlayerUpdate(){
   if(!G.socket||!G.roomId||!G.player) return;
   G.socket.emit('update-player',{
@@ -1004,6 +1024,8 @@ function emitPlayerUpdate(){
     hp:G.player.hp,maxHp:G.player.maxHp,
     region:G.region,stage:G.stage,
     alive:G.player.hp>0,
+    isReady: G.isReady,
+    turnReady: G.turnReady
   });
 }
 
@@ -1297,7 +1319,6 @@ function doPlayerAction(aid){
       log(`⚠️ ${p.icon} ${ab.name}: campo minado ativado — próximo ataque reflete ${ab.pow}×!`,'player');break;
     }
     case 'evade_counter':{
-      // 60% dodge + counter
       if(Math.random()<0.60){
         const d=calcDmg(p.atk,e.def,ab.pow);
         e.hp=Math.max(0,e.hp-d);
@@ -1309,34 +1330,45 @@ function doPlayerAction(aid){
       break;
     }
     case 'super':{
-      // Super attack — triggers cutscene
       const cls=CLASSES[p.cid];
-      const d=calcDmg(p.atk,0,ab.pow); // ignore def
+      const d=calcDmg(p.atk,0,ab.pow);
       e.hp=Math.max(0,e.hp-d);
       G.superCharge=0;
       floatDmg(d,cls.superColor,true);
-      // Apply extra effect based on class
-      if(p.cid==='preacher') G.enemyBurning=3; // burn
+      if(p.cid==='preacher') G.enemyBurning=3;
       if(p.cid==='outlaw')   G.enemyPsn=4; G.enemyPsnDmg=Math.floor(d*0.1);
       if(p.cid==='sheriff')  {p.hp=Math.min(p.maxHp,p.hp+60); floatDmg(60,'#4ade80',false,true);}
 
       playSuperCutscene(cls,e,d,()=>{
         if(e.hp<=0){endCombat(true);return;}
         log(`🌟 SUPER ${cls.superName}: ${d} dano DEVASTADOR!`,'super');
-        doEnemyAttackAndContinue();
+        
+        if (G.roomId) {
+           G.turnReady = true;
+           log('⏳ Aguardando aliados terminarem o ataque...', 'system');
+           emitPlayerUpdate();
+           render();
+        } else {
+           doEnemyAttackAndContinue();
+        }
       });
-      emitPlayerUpdate();
-      return; // cutscene handles the rest async
+      if(G.socket&&G.roomId) G.socket.emit('combat-event',{turn:G.turn,enemyHp:G.enemy.hp,playerId:G.mySocketId});
+      return; 
     }
   }
 
+  if(G.socket&&G.roomId) G.socket.emit('combat-event',{turn:G.turn,enemyHp:G.enemy.hp,playerId:G.mySocketId});
+
   if(e.hp<=0){endCombat(true);return;}
 
-  // DoT ticks on enemy
-  tickEnemyDoT();
-  if(e.hp<=0){endCombat(true);return;}
-
-  doEnemyAttackAndContinue();
+  if (G.roomId) {
+    G.turnReady = true;
+    log('⏳ Aguardando aliados terminarem o ataque...', 'system');
+    emitPlayerUpdate();
+    render(); 
+  } else {
+    doEnemyAttackAndContinue(); 
+  }
 }
 
 function tickEnemyDoT(){
@@ -1380,6 +1412,9 @@ function tickPlayerDoT(){
 function doEnemyAttackAndContinue(){
   const p=G.player,e=G.enemy;
 
+  tickEnemyDoT(); 
+  if(e.hp<=0){endCombat(true);return;}
+
   // Debuff countdown
   if(G.enemyDebuffTurns>0){G.enemyDebuffTurns--;if(G.enemyDebuffTurns===0)e.atk=G.enemyOrigAtk;}
   if(G.enemyOrigDefTurns>0){G.enemyOrigDefTurns--;if(G.enemyOrigDefTurns===0&&G.enemyOrigDef)e.def=G.enemyOrigDef;}
@@ -1415,10 +1450,6 @@ function doEnemyAttackAndContinue(){
 
   emitPlayerUpdate();
 
-  if(G.socket&&G.roomId){
-    G.socket.emit('combat-event',{turn:G.turn,enemyHp:G.enemy.hp});
-  }
-
   if(G.totalTurns>0&&G.totalTurns%5===0){
     log('🏪 Um mercador aparece no caminho!','system');
     setTimeout(()=>{G.screen='shop';render();},400);
@@ -1449,7 +1480,6 @@ function doEnemyAttack(){
       dmg=Math.floor(dmg*1.6);
       log(`💢 ${e.icon} ${e.name} usa ATAQUE ESPECIAL! ${dmg} dano!`,'enemy');
       floatDmg(dmg,'#ef4444',true);
-      // Boss special: apply debuff to player
       if(Math.random()<0.4){G.playerBurn=2;log(`🔥 Você foi INCENDIADO!`,'enemy');}
     } else if(isCrit){
       dmg=Math.floor(dmg*1.4);
@@ -1525,6 +1555,17 @@ function buyItem(id){
 /* ══════════════════════════════════════════════════════════════
    SCREENS
 ══════════════════════════════════════════════════════════════ */
+function scWaitingRoom(){
+  return `
+  <div class="name-screen fade-in">
+    <div class="title-sun" style="width:70px;height:70px"></div>
+    <h2 class="screen-title rye glow-gold">Aguardando a Posse...</h2>
+    <p style="color:var(--sand);font-family:'Courier Prime',monospace;font-size:1rem;">
+      Esperando seus parceiros escolherem as classes.<br>O chumbo vai voar quando todos estiverem prontos!
+    </p>
+  </div>`;
+}
+
 function scTitle(){
   return`
   <div class="title-screen fade-in">
@@ -1684,8 +1725,10 @@ function scCombat(){
     return`<div class="cl-entry cl-${l.type}">${l.msg}</div>`;
   }).join('');
 
+  const waitLock = G.turnReady;
+
   const abBtns=abs.filter(a=>a.type!=='super').map(a=>{
-    const dis=a.mp>p.mana;
+    const dis=a.mp>p.mana || waitLock;
     return`
     <button class="ab-btn" style="--cc:${cls.color}" onclick="act('ability','${a.id}')" ${dis?'disabled':''}>
       <div class="ab-btn-name">${a.icon} ${a.name}</div>
@@ -1696,7 +1739,7 @@ function scCombat(){
 
   const superAb=abs.find(a=>a.type==='super');
   const superBtn=superAb?`
-  <button class="super-btn" style="--cc:${cls.superColor}" onclick="act('ability','super')" ${G.superCharge<100?'disabled':''}>
+  <button class="super-btn" style="--cc:${cls.superColor}" onclick="act('ability','super')" ${G.superCharge<100 || waitLock ?'disabled':''}>
     <div class="super-btn-name">${cls.superIcon} ${cls.superName}</div>
     <div class="super-fill-bar">
       <div class="super-fill" style="width:${G.superCharge}%"></div>
@@ -1742,7 +1785,6 @@ function scCombat(){
 
   return`
   <div class="combat-wrap fade-in">
-    <!-- REGION HEADER -->
     <div class="region-header">
       <div>
         <div class="rh-name">${region.icon} ${region.name}</div>
@@ -1758,7 +1800,6 @@ function scCombat(){
 
     ${posseHTML}
 
-    <!-- PLAYER COLUMN -->
     <div class="player-col">
       <div class="panel">
         <div class="panel-title">Pistoleiro</div>
@@ -1823,7 +1864,6 @@ function scCombat(){
       </div>
     </div>
 
-    <!-- CENTER COLUMN -->
     <div class="center-col">
       <div class="panel" style="padding:.8rem">
         <div class="panel-title">Registro de Combate</div>
@@ -1836,7 +1876,6 @@ function scCombat(){
       </div>
     </div>
 
-    <!-- ENEMY COLUMN -->
     <div class="enemy-col">
       <div class="panel">
         <div class="panel-title">Inimigo</div>
@@ -2019,6 +2058,7 @@ function render(){
     case 'lobby':        g.innerHTML=scLobby();break;
     case 'name-input':   g.innerHTML=scNameInput();break;
     case 'class-select': g.innerHTML=scClassSelect();break;
+    case 'waiting-room': g.innerHTML=scWaitingRoom();break;
     case 'combat':       g.innerHTML=scCombat();scrollLog();break;
     case 'shop':         g.innerHTML=scShop();break;
     case 'stage-clear':  g.innerHTML=scStageClear();break;
@@ -2053,7 +2093,8 @@ function act(action,param){
       G.socket.emit('join-room',{
         player:{
           name:G.playerName,className:'?',icon:'🤠',
-          level:1,hp:100,maxHp:100,region:0,stage:0,alive:true
+          level:1,hp:100,maxHp:100,region:0,stage:0,alive:true,
+          isReady:false,turnReady:false
         }
       });
       break;
@@ -2069,7 +2110,8 @@ function act(action,param){
         roomId:code,
         player:{
           name:G.playerName,className:'?',icon:'🤠',
-          level:1,hp:100,maxHp:100,region:0,stage:0,alive:true
+          level:1,hp:100,maxHp:100,region:0,stage:0,alive:true,
+          isReady:false,turnReady:false
         }
       });
       break;
@@ -2095,7 +2137,16 @@ function act(action,param){
       G.player=mkPlayer(param);
       G.player.name=G.playerName;
       G.region=0;G.stage=0;G.totalTurns=0;G.superCharge=0;
-      startCombat();break;
+      G.isReady = true;
+      emitPlayerUpdate();
+
+      if (G.roomId) {
+        G.screen = 'waiting-room';
+        render();
+      } else {
+        startCombat();
+      }
+      break;
 
     case 'ability':
       doPlayerAction(param);break;
@@ -2123,7 +2174,7 @@ function act(action,param){
         enemyStunTurns:0,playerDefBuff:0,playerDefBuffTurns:0,
         enemyMarked:false,enemyBurning:0,enemyBleed:0,
         enemyPsn:0,enemyPsnDmg:0,playerBurn:0,playerBleed:0,
-        superCharge:0,
+        superCharge:0,isReady:false,turnReady:false
       };
       render();break;
   }
