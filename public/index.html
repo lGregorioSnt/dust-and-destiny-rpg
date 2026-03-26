@@ -971,8 +971,8 @@ function updateRoomPlayers(players){
 function renderIfCombat(){
   if(G.screen==='combat') render();
   if(G.screen==='shop') render();
+  if(G.screen==='lobby') render(); // Essa é a linha mágica que faltava!
 }
-
 function emitPlayerUpdate(){
   if(!G.socket||!G.roomId||!G.player) return;
   G.socket.emit('update-player',{
